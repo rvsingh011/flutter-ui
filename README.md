@@ -1,7 +1,10 @@
-# Flutter_UI
-This repo holds code samples for flutter UI which I have made.
+# Flutter UI
 
+This repo holds code samples for flutter UI. APK can be found in apk directory under each project. 
 
- ## Expense UI 
+## Expense UI 
 
- ![Expense UI](./expense_ui/Expense_ui.gif)
+![Expense UI](GIFS/expense.gif)
+
+## Plant UI 
+
