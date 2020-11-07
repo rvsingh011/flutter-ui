@@ -42,9 +42,7 @@ class HomePage extends StatelessWidget {
           children: [
             Image(
               height: 280,
-              image: NetworkImage(
-                "https://raw.githubusercontent.com/singh-saheb/help__section_ui/master/images/contactus2.png",
-              ),
+              image: AssetImage("images/contactus2.png"),
             ),
             SizedBox(
               height: 20,
