@@ -1,75 +1,62 @@
 import 'package:flutter/material.dart';
 
+import 'header_bar.dart';
+
 class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: true,
-      resizeToAvoidBottomPadding: false,
-      appBar: AppBar(
-        // flexibleSpace: Container(
-        //   decoration: BoxDecoration(
-        //     gradient:
-        //         LinearGradient(colors: [Colors.amber[300], Colors.cyan[300]]),
-        //   ),
-        // ),
-        backgroundColor: Colors.grey[300],
-        elevation: 0,
-        brightness: Brightness.light,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-            size: 30,
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            colors: [
+              Color(0xFFFFFF7E),
+              Color(0xFF00A8C5),
+            ],
           ),
         ),
-      ),
-      body: SafeArea(
-        child: Container(
-          color: Colors.grey[300],
-          width: double.infinity,
-          height: double.infinity,
-          // decoration: BoxDecoration(
-          //   gradient:
-          //       LinearGradient(colors: [Colors.amber[300], Colors.cyan[300]]),
-          // ),
-          child: Wrap(
-            children: [
-              LoginHeading(),
-              SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        makeInput(label: "Email"),
-                        makeInput(label: "Password", obsecureText: true),
-                        makeInput(
-                            label: "Confirm Password", obsecureText: true),
-                        makeInput(label: "Phone Number", obsecureText: true),
-                      ],
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(20),
-                      child: MaterialButton(
-                          minWidth: double.infinity,
-                          color: Colors.amber[300],
-                          height: 60,
-                          onPressed: () {},
-                          child: Text("Sign Up"),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(40),
-                              side: BorderSide(color: Colors.black))),
-                    ),
-                  ],
+        child: SingleChildScrollView(
+          child: SafeArea(
+            child: Column(
+              children: [
+                HeaderBar(),
+                LoginHeading(),
+                SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          makeInput(label: "Email"),
+                          makeInput(label: "Password", obsecureText: true),
+                          makeInput(
+                              label: "Confirm Password", obsecureText: true),
+                          makeInput(label: "Phone Number", obsecureText: true),
+                        ],
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(20),
+                        margin: EdgeInsets.only(bottom: 50),
+                        child: MaterialButton(
+                            minWidth: double.infinity,
+                            color: Colors.amber[300],
+                            height: 60,
+                            onPressed: () {},
+                            child: Text("Sign Up"),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(40),
+                                side: BorderSide(color: Colors.black))),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

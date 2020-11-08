@@ -8,6 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: ShadowDemo(),
       ),
@@ -24,6 +25,15 @@ class _ShadowDemoState extends State<ShadowDemo> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          colors: [
+            Color(0xFFFFFF7E),
+            Color(0xFF00A8C5),
+          ],
+        ),
+      ),
       child: SafeArea(
         child: Container(
             padding: EdgeInsets.all(20),
@@ -58,9 +68,6 @@ class _ShadowDemoState extends State<ShadowDemo> {
                     height: 350,
                     width: 350,
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [Colors.purple[200], Colors.purple[300]],
-                      ),
                       borderRadius: BorderRadius.circular(200),
                       image: DecorationImage(
                         image: AssetImage('assets/girl.png'),
